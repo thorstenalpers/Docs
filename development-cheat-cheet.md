@@ -16,6 +16,6 @@
 
  Topic        | Description   | Reference 
  -------------|---------------|-----
-  vhost      | Used to separate tenants virtually so that they have their own RabbitMQ instance with queues, etc. A physical alternative is to host multiple RabbitMQ instances.| https://www.cloudamqp.com/blog/2020-09-10-what-is-a-rabbitmq-vhost.html
+  vhost      | Used to separate tenants virtually so that they have their own RabbitMQ instance with queues, etc. . A physical alternative is to host multiple RabbitMQ instances.| https://www.cloudamqp.com/blog/2020-09-10-what-is-a-rabbitmq-vhost.html
   Exchange | Used by the producer as single point where the events gets delivered to. An exchange can be connected between 1 or N receiver queueus. 
   Queue | Used by the receiver of events. After reading and acknowledging the reception the event will be purged from the queueu.
