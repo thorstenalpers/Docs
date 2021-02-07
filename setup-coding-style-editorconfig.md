@@ -31,7 +31,7 @@ dotnet_style_qualification_for_event = true:warning
 3. Fix the warning with quick actions
 
 
-![Live Demo](./assets/editorconfig-livedemo.gif "Live Demo")
+![Live Demo](./screenshots/editorconfig-livedemo.gif "Live Demo")
 
 ## See also
 

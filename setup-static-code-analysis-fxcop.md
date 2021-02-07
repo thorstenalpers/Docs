@@ -33,7 +33,7 @@ The rule value should always be set to true.
 4. Rebuild the solution
 5. Fix the warning with quick actions
 
-![Live Demo](./assets/configure-ruleset-livedemo.gif "Live Demo")
+![Live Demo](./screenshots/configure-ruleset-livedemo.gif "Live Demo")
 
 
 ## Supress Warnings of a specific rule
