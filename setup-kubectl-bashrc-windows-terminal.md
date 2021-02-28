@@ -17,7 +17,7 @@ Bash completion is a nice feature of the Linux bash which completes scripts whil
 Follow the installation instructions of the listed packages above. Enable kubernetes for windows and get familar with the Windows Terminal.
 
 1. Also install [helm for windows](https://helm.sh/docs/intro/install/) and make sure helm is working on Windows.
-2. Open Windows Terminal: "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.5.10411.0_x64__8wekyb3d8bbwe\wt.exe"
+2. Open Windows Terminal: "wt.exe"
 3. Open a wsl session
 4. [Optional] Change the user settings so that an admin doesn't enter a password.
 
