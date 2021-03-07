@@ -2,39 +2,35 @@
 
 Microsoft offers a great way to add static code analysis to .net projects.
 
+
 ## Installation
 
-1. Add a new item "Code Analysis Rule Set" to the solution folder
-2. Open the file from within Visual Studio
-3. Group the rules by category
-4. Either set severity level of each rule or use severity levels from an existing ruleset
-5. Add nuget package FxCop as reference to each project
-6. Reference the new ruleset file for each project 
+Add Nuget to all the projects.
+
+```powershell
+Install-Package Microsoft.CodeAnalysis.CSharp
+```
+
+To enable analysis just go to the project properties in Visual Studio and go to the tab CodeAnalysis and enable features you want to have.
+
+An other way is to add the entries manually in the csproj files:
 
 ```xml
 <PropertyGroup>
-  <CodeAnalysisRuleSet>..\custom.ruleset</CodeAnalysisRuleSet>
+  <!-- Enable Code Analysis -->
+  <EnableNETAnalyzers>true</EnableNETAnalyzers>
+
+  <!-- Enable editorconfig -->
+  <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 </PropertyGroup>
 ```
-7. Rebuild solution
 
 
 That's it! Now compiler Roslyn shows the issues and Intellisense gives hints how to fix them.
 
 ## Customize rules
 
-Styling rules are defined in the .editorconfig file. 
-A rule consists of a rule name (e.g. dotnet_style_qualification_for_field), a rule value (e.g. true) and a severity level (e.g. warning).
-The rule value should always be set to true.
-
-1. Open "Code Analysis Rule Set"
-2. Group them by name or category
-3. Check the rule and set severity level
-4. Rebuild the solution
-5. Fix the warning with quick actions
-
-![Live Demo](./screenshots/configure-ruleset-livedemo.gif "Live Demo")
-
+The easiest way to customize the severity level of issues is to use the editorconfig file.
 
 ## Supress Warnings of a specific rule
 
@@ -74,8 +70,20 @@ With that directive we tell the compiler to skip that specific warning.
 #pragma warning restore CS0169  
 ```
 
+## Run Code Anaylysis in Build Pipelines
+
+
+```bash
+dotnet msbuild -t:rebuild  -warnaserror
+```
+
+## Demo
+
+![Live Demo](./screenshots/live-code-analysis.gif "Live Demo")
+
+
+
 ## See also
 
-* [Microsoft documentation about FxCop](https://docs.microsoft.com/en-us/visualstudio/code-quality/install-fxcop-analyzers)
-* [Microsoft documentation about suppressing rule violations](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-suppress-compiler-warnings)
+* [Microsoft documentation about Code Quality](https://docs.microsoft.com/de-de/dotnet/fundamentals/code-analysis/overview)
  
