@@ -37,6 +37,14 @@ Elastic APM is a free and open application performance monitoring system built o
 helm install apm-server elastic/apm-server
 ```
 
+## Optional: Install MetricBeat
+
+Collect metrics from your systems and services. From CPU to memory, Redis to NGINX, and much more, Metricbeat is a lightweight way to send system and service statistics.
+
+```bash
+helm install metricbeat elastic/metricbeat
+```
+
 ## See also
 
 * [Artifact Hub](https://artifacthub.io/)
