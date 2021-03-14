@@ -1,5 +1,6 @@
 # Set up the ELK Stack - ElasticSearch, Logstash and Kibana
 
+The ELK Stack is a great way to analyze data. ElasticSearch stores the data in a NoSql Database and Kibana is the UI to analyze them.
 
 ## Install ElasticSearch
 
