@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/elastic/helm-charts/master/elasticsearch/
 
 Reuce the replicas and storage size.
 ```bash
-helm install my-elasticsearch elastic/elasticsearch -f ./elastic-deployment.yaml 
+helm install elasticsearch elastic/elasticsearch -f ./elastic-deployment.yaml 
 ```
 ## Install Kibana
 
