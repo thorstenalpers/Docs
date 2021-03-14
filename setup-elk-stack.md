@@ -109,6 +109,30 @@ helm show values elastic/apm-server > apm-deployment.yaml
 helm install apm-server elastic/apm-server -f apm-deployment.yaml
 ```
 
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: apm-nodeport
+spec:
+  type: NodePort
+  selector:
+    app: apm-server # label of the pod
+  ports:
+    - name: apm
+      protocol: TCP
+      port: 8200
+      targetPort: 8200
+      nodePort: 30041
+```
+
+save as apm-nodeport.yaml
+
+```powershell
+kubectl apply -f apm-nodeport.yaml
+```
+
 ## Optional: Install MetricBeat
 
 Collect metrics from your systems and services. From CPU to memory, Redis to NGINX, and much more, Metricbeat is a lightweight way to send system and service statistics.
