@@ -6,7 +6,7 @@ All urls and ports inside the kubernetes cluster are not accessible per default 
 
 Kubectl port-forward allows you to access and interact with internal Kubernetes cluster processes from your localhost. You can use this method to investigate issues and adjust your services locally without the need to expose them beforehand.
 
-It will expose the port temporary while the script is running and performs load balancing. Accesible as localhost:15672.
+It will expose the port temporary while the script is running and performs load balancing. Accessible as localhost:15672.
 
 
 ```powershell
@@ -23,7 +23,7 @@ the matchLabels component. Note that if no port is specified via --port and the 
 will be re-used by the new service. Also if no labels are specified, the new service will re-use the labels from the
 resource it exposes.
 
-It will expose the port permanently but without load balancing. Accesible as localhost:15672.
+It will expose the port permanently but without load balancing. Accessible as localhost:15672.
 
 
 ```powershell
@@ -42,7 +42,7 @@ Exposes the Service on each Node's IP at a static port (the NodePort). A Cluster
 
 Using a NodePort gives you the freedom to set up your own load balancing solution, to configure environments that are not fully supported by Kubernetes, or even to just expose one or more nodes' IPs directly.
 
-It will expose the port permanently and performs load balancing. Accesible as localhost:30012.
+It will expose the port permanently and performs load balancing. Accessible as localhost:30012.
 
 ```powershell
 kubectl describe pod rabbitmq
@@ -94,9 +94,8 @@ NodePorts let you expose a service by specifying that value in the service’s t
 
 This makes it decoupled and isolated from the services you want to expose. It also helps you to consolidate routing rules into one place.
 
-It will expose the port permanently, performs load balancing and dns name resolution. Accesible as localhost/rabbitmq.
+It will expose the port permanently, performs load balancing and dns name resolution. UI accessible as localhost/rabbitmq and localhost:30011 for amqp traffic.
 
-An Ingress controller is required and must be installed. NGinx is the most popular one.
 
 ```bash
 helm show values ingress-nginx/ingress-nginx > nginx-deployment.yaml
