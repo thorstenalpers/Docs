@@ -7,12 +7,12 @@ The ELK Stack is a great way to analyze data. ElasticSearch stores the data in a
 Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data for lightning fast search, fine‑tuned relevancy, and powerful analytics that scale with ease.
 
 ```bash
-helm show values elastic/elasticsearch > elasticsearch-deployment.yaml
+helm show values elastic/elasticsearch > elasticsearch-values.yaml
 ```
 
 Reuce the replicas and storage size.
 ```bash
-helm install elasticsearch elastic/elasticsearch -f ./elasticsearch-deployment.yaml 
+helm install elasticsearch elastic/elasticsearch -f ./elasticsearch-values.yaml 
 ```
 
 ```yaml
@@ -42,11 +42,11 @@ kubectl apply -f elasticsearch-nodeport.yaml
 Kibana is a free and open user interface that lets you visualize your Elasticsearch data and navigate the Elastic Stack. Do anything from tracking query load to understanding the way requests flow through your apps.
 
 ```bash
-helm show values elastic/kibana > kibana-deployment.yaml
+helm show values elastic/kibana > kibana-values.yaml
 ```
 
 ```bash
-helm install kibana elastic/kibana -f kibana-deployment.yaml
+helm install kibana elastic/kibana -f kibana-values.yaml
 ```
 
 ```yaml
@@ -79,11 +79,11 @@ Enter http://localhost:30021/ to access kibana.
 Logstash is a free and open server-side data processing pipeline that ingests data from a multitude of sources, transforms it, and then sends it to your favorite "stash."
 
 ```bash
-helm show values elastic/logstash > logstash-deployment.yaml
+helm show values elastic/logstash > logstash-values.yaml
 ```
 
 ```bash
-helm install logstash elastic/logstash -f logstash-deployment.yaml
+helm install logstash elastic/logstash -f logstash-values.yaml
 ```
 
 ## Optional: Install Filebeat
@@ -91,11 +91,11 @@ helm install logstash elastic/logstash -f logstash-deployment.yaml
 Whether you’re collecting from security devices, cloud, containers, hosts, or OT, Filebeat helps you keep the simple things simple by offering a lightweight way to forward and centralize logs and files.
 
 ```bash
-helm show values elastic/filebeat > filebeat-deployment.yaml
+helm show values elastic/filebeat > filebeat-values.yaml
 ```
 
 ```bash
-helm install filebeat elastic/filebeat -f filebeat-deployment.yaml
+helm install filebeat elastic/filebeat -f filebeat-values.yaml
 ```
 
 ## Optional: Install APM Server
@@ -103,11 +103,11 @@ helm install filebeat elastic/filebeat -f filebeat-deployment.yaml
 Elastic APM is a free and open application performance monitoring system built on the Elastic Stack. This component, APM Server, validates and processes events from APM agents, transforms the data into Elasticsearch documents, and stores it in corresponding Elasticsearch indices.
 
 ```bash
-helm show values elastic/apm-server > apm-deployment.yaml
+helm show values elastic/apm-server > apm-values.yaml
 ```
 
 ```bash
-helm install apm-server elastic/apm-server -f apm-deployment.yaml
+helm install apm-server elastic/apm-server -f apm-values.yaml
 ```
 
 
@@ -139,11 +139,11 @@ kubectl apply -f apm-nodeport.yaml
 Collect metrics from your systems and services. From CPU to memory, Redis to NGINX, and much more, Metricbeat is a lightweight way to send system and service statistics.
 
 ```bash
-helm show values elastic/metricbeat > metricbeat-deployment.yaml
+helm show values elastic/metricbeat > metricbeat-values.yaml
 ```
 
 ```bash
-helm install metricbeat elastic/metricbeat -f metricbeat-deployment.yaml
+helm install metricbeat elastic/metricbeat -f metricbeat-values.yaml
 ```
 
 ## See also
