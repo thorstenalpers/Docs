@@ -27,8 +27,8 @@ spec:
   ports:
     - name: elastic
       protocol: TCP
-      port: 5672
-      targetPort: 5672
+      port: 9200
+      targetPort: 9200
       nodePort: 30011
 ```
 
